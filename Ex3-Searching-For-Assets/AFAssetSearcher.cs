@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OSIsoft.AF;
 
 namespace Ex3_Searching_For_Assets
 {
     public class AFAssetSearcher
     {
-        // Define any instance members here
+        AFDatabase _database;
+        // Define other instance members here
 
         public AFAssetSearcher(string server, string database)
         {

@@ -10,29 +10,24 @@ using OSIsoft.AF.Time;
 
 namespace Ex5_Working_With_Event_Frames
 {
-    public static class AFEventFrameCreator
+    public class AFEventFrameCreator
     {
         // Define any members here
-        private static AFDatabase _database;
-        private static AFElementTemplate _efTemp; // For AF Event Frame template
+        private AFDatabase _database;
+        private AFElementTemplate _efTemp; // References to the AF Event Frame template
 
-        public static void Create()
+        public AFEventFrameCreator(string server, string database)
         {
-            PISystem piSystem = new PISystems().DefaultPISystem;
-            _database = piSystem.Databases["Wizardry Power Company"];
+            PISystem ps = new PISystems()[server];
+            _database = ps.Databases[database];
 
-            if (_database.ElementTemplates.Contains("Usage Tracker"))
+            if (_database != null &&  _database.ElementTemplates.Contains("Usage Tracker"))
             {
                 _efTemp = _database.ElementTemplates["Usage Tracker"];
             }
-
-            CreateEventFrameTemplate();
-            CreateEventFrames();
-            CaptureValues();
-            PrintReport();
         }
 
-        private static void CreateEventFrameTemplate()
+        public void CreateEventFrameTemplate()
         {
             if (_database.ElementTemplates.Contains("Usage Tracker"))
             {
@@ -52,7 +47,7 @@ namespace Ex5_Working_With_Event_Frames
             _database.CheckIn();
         }
 
-        private static void CreateEventFrames()
+        public void CreateEventFrames()
         {
             const int pageSize = 200;
             int startIndex = 0;
@@ -90,7 +85,7 @@ namespace Ex5_Working_With_Event_Frames
             } while (startIndex < totalCount);
         }
 
-        private static void CaptureValues()
+        public void CaptureValues()
         {
             const int pageSize = 200;
             int startIndex = 0;
@@ -126,7 +121,7 @@ namespace Ex5_Working_With_Event_Frames
             } while (efs != null && efs.Count > 0);
         }
 
-        private static void PrintReport()
+        public void PrintReport()
         {
             const int pageSize = 200;
             int startIndex = 0;

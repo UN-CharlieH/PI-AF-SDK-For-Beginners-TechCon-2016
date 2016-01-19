@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using External;
 
 namespace Ex3_Searching_For_Assets_Sln
 {
@@ -10,7 +11,7 @@ namespace Ex3_Searching_For_Assets_Sln
     {
         static void Main(string[] args)
         {
-            AFAssetSearcher searcher = new AFAssetSearcher("BSHANGE6430S","Wizardry Power Company");
+            AFAssetSearcher searcher = new AFAssetSearcher(Constants.AFSERVERNAME,"Wizardry Power Company");
             //searcher.FindMetersByName("Meter00*");
             //searcher.FindMetersByTemplate("MeterAdvanced");
             //searcher.FindMetersBySubstation("Edinburgh");

@@ -6,31 +6,32 @@ using System.Threading.Tasks;
 using OSIsoft.AF;
 using OSIsoft.AF.Asset;
 using OSIsoft.AF.UnitsOfMeasure;
+using External;
 
 namespace Ex2_Building_An_AF_Hierarchy_Sln
 {
-    public class AFHierarchyBuilder
+    public static class AFHierarchyBuilder
     {
-        AFDatabase _database;
+        static AFDatabase _database;
 
-        AFElementTemplate _houseTemplate;
-        AFElementTemplate _storyTemplate;
-        AFElementTemplate _roomTemplate;
+        static AFElementTemplate _houseTemplate;
+        static AFElementTemplate _storyTemplate;
+        static AFElementTemplate _roomTemplate;
 
-        public void Build()
+        public static void Build()
         {
             CreateDatabase();
             CreateTemplates();
             CreateElements();
         }
 
-        private void CreateDatabase()
+        private static void CreateDatabase()
         {
-            PISystem piSystem = new PISystems()["BSHANGE6430s"];
+            PISystem piSystem = new PISystems()[Constants.AFSERVERNAME];
             _database = piSystem.Databases.Add("Hogwarts");
         }
 
-        private void CreateTemplates()
+        private static void CreateTemplates()
         {
             // Create the element templates
             _houseTemplate = _database.ElementTemplates.Add("House");
@@ -78,7 +79,7 @@ namespace Ex2_Building_An_AF_Hierarchy_Sln
             _database.CheckIn();
         }
 
-        private void CreateElements()
+        private static void CreateElements()
         {
             AFElement gryffindor = _database.Elements.Add("Gryffindor", _houseTemplate);
             AFElement hufflepuff = _database.Elements.Add("Hufflepuff", _houseTemplate);
@@ -90,7 +91,7 @@ namespace Ex2_Building_An_AF_Hierarchy_Sln
             _database.CheckIn();
         }
 
-        private void CreateStoriesAndRooms(IEnumerable<AFElement> houses)
+        private static void CreateStoriesAndRooms(IEnumerable<AFElement> houses)
         {
             foreach (AFElement house in houses)
             {

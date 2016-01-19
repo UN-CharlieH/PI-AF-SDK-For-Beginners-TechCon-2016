@@ -11,14 +11,12 @@ namespace Ex3_Searching_For_Assets_Sln
 {
     public class AFAssetSearcher
     {
-        // Define any instance members here
-        PISystem _piSystem;
         AFDatabase _database;
 
         public AFAssetSearcher(string server, string database)
         {
-            _piSystem = PISystem.CreatePISystem(server);
-            _database = _piSystem.Databases[database];
+            PISystem ps  = new PISystems()[server];
+            _database = ps.Databases[database];
         }
 
         public void FindMetersByName(string elementNameFilter)

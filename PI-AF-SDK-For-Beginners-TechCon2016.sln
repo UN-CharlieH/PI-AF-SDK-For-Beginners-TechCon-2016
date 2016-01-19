@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex5-Working-With-Event-Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex5-Working-With-Event-Frames", "Ex5-Working-With-EventFrames\Ex5-Working-With-Event-Frames.csproj", "{336C7E54-66C9-45C0-8BB8-FA9B3A3CB0FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "External", "External\External.csproj", "{D092B122-47DE-4107-B2A3-CC06F8426C62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{336C7E54-66C9-45C0-8BB8-FA9B3A3CB0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{336C7E54-66C9-45C0-8BB8-FA9B3A3CB0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{336C7E54-66C9-45C0-8BB8-FA9B3A3CB0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D092B122-47DE-4107-B2A3-CC06F8426C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D092B122-47DE-4107-B2A3-CC06F8426C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D092B122-47DE-4107-B2A3-CC06F8426C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D092B122-47DE-4107-B2A3-CC06F8426C62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

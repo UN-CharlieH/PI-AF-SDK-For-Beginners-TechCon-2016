@@ -3,31 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using External;
 
 namespace Ex2_Building_AF_Database
 {
-    public class AFHierarchyBuilder
+    public static class AFHierarchyBuilder
     {
-        // Define any instance members here
+        // Define any members here
 
-        public void Build()
+        public static void Build()
         {
             CreateDatabase();
             CreateTemplates();
             CreateElements();
         }
 
-        private void CreateDatabase()
+        private static void CreateDatabase()
         {
             // Your code here
         }
 
-        private void CreateTemplates()
+        private static void CreateTemplates()
         {
             // Your code here
         }
 
-        private void CreateElements()
+        private static void CreateElements()
         {
             // Your code here
         }
