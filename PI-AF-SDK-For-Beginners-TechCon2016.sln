@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection", "PI-AF-SDK-For-Beginners-TechCon2016\Ex1-Connection.csproj", "{B8A590E4-2FC6-40ED-9AEF-07652B8EEC8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection", "Ex1_Connection\Ex1-Connection.csproj", "{B8A590E4-2FC6-40ED-9AEF-07652B8EEC8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection-Sln", "Ex1_Connection_Sln\Ex1-Connection-Sln.csproj", "{ABB540D9-4B9F-4A83-9578-5E33EE7C5CF6}"
 EndProject
