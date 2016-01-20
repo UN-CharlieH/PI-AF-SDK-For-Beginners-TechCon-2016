@@ -16,7 +16,7 @@ namespace Ex3_Searching_For_Assets_Sln
         public AFAssetSearcher(string server, string database)
         {
             PISystem ps  = new PISystems()[server];
-            _database = ps.Databases[database];
+            if (ps != null) _database = ps.Databases[database];
         }
 
         public void FindMetersByName(string elementNameFilter)
@@ -95,14 +95,13 @@ namespace Ex3_Searching_For_Assets_Sln
             Console.WriteLine(sb.ToString());
         }
 
-        public void FindMetersBelowLimit(double limit)
+        public void FindMetersByUsage(AFSearchOperator op, double val)
         {
             AFElementTemplate elemTemplate = _database.ElementTemplates["MeterBasic"];
-            AFAttributeTemplate attrTemplate = elemTemplate.AttributeTemplates["Usage Limit"];
+            AFAttributeTemplate attrTemplate = elemTemplate.AttributeTemplates["Energy Usage"];
 
             AFAttributeValueQuery[] query = new AFAttributeValueQuery[1];
-            query[0] = new AFAttributeValueQuery(attrTemplate, AFSearchOperator.LessThan, limit);
-
+            query[0] = new AFAttributeValueQuery(attrTemplate, op, val);
 
             AFNamedCollectionList<AFElement> foundElements = AFElement.FindElementsByAttribute(
                                                     searchRoot: null,
@@ -145,11 +144,9 @@ namespace Ex3_Searching_For_Assets_Sln
                                                     sortOrder: AFSortOrder.Ascending,
                                                     maxCount: 100);
 
-            foreach (AFAttribute attr in foundAttributes)
-            {
-                string path = attr.GetPath(root);
-                Console.WriteLine(path);
-            }
+            IEnumerable<string> elementNames = foundAttributes.Select(a => a.Element.Name).Distinct();
+
+            Console.WriteLine(String.Join(", ", elementNames));
         }
     }
 }

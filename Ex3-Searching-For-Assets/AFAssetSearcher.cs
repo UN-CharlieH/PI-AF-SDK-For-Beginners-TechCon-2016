@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OSIsoft.AF;
+using OSIsoft.AF.Search;
 
 namespace Ex3_Searching_For_Assets
 {
@@ -32,7 +33,7 @@ namespace Ex3_Searching_For_Assets
             // Your code here
         }
 
-        public void FindMetersBelowLimit(double limit)
+        public void FindMetersByUsage(AFSearchOperator op, double val)
         {
             // Your code here
         }
