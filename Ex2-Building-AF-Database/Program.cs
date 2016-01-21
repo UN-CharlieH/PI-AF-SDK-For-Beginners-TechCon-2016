@@ -10,7 +10,11 @@ namespace Ex2_Building_AF_Database
     {
         static void Main(string[] args)
         {
-            AFHierarchyBuilder.Build();
+            // Uncomment the lines below to test
+            // AFHierarchyBuilder builder = new AFHierarchyBuilder();
+            // builder.CreateDatabase();
+            // builder.CreateTemplates();
+            // builder.CreateElements();
 
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();

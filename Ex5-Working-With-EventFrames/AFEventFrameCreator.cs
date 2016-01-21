@@ -12,33 +12,30 @@ namespace Ex5_Working_With_EventFrames
     public class AFEventFrameCreator
     {
         // Define any members here
-        private static AFDatabase _database;
-        private static AFElementTemplate _efTemp; // For AF Event Frame template
+        private AFDatabase _database;
+        private AFElementTemplate _efTemp; // For AF Event Frame template
 
-        public static void Create()
-        {
-            CreateEventFrameTemplate();
-            CreateEventFrames();
-            CaptureValues();
-            PrintReport();
-        }
-
-        private static void CreateEventFrameTemplate()
+        public AFEventFrameCreator(string server, string database)
         {
             // Your code here
         }
 
-        private static void CreateEventFrames()
+        public void CreateEventFrameTemplate()
         {
             // Your code here
         }
 
-        private static void CaptureValues()
+        public void CreateEventFrames()
         {
             // Your code here
         }
 
-        private static void PrintReport()
+        public void CaptureValues()
+        {
+            // Your code here
+        }
+
+        public void PrintReport()
         {
             // Your code here
         }

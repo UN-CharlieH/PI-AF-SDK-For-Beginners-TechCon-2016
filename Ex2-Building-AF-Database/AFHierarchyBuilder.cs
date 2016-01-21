@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OSIsoft.AF;
+using OSIsoft.AF.Asset;
+using OSIsoft.AF.UnitsOfMeasure;
 using External;
 
 namespace Ex2_Building_AF_Database
 {
-    public static class AFHierarchyBuilder
+    public class AFHierarchyBuilder
     {
-        // Define any members here
+        private AFDatabase _database;
+        private AFElementTemplate _houseTemplate;
+        private AFElementTemplate _storyTemplate;
+        private AFElementTemplate _roomTemplate;
+        // Define any other instance members here
 
-        public static void Build()
-        {
-            CreateDatabase();
-            CreateTemplates();
-            CreateElements();
-        }
-
-        private static void CreateDatabase()
+        public void CreateDatabase()
         {
             // Your code here
         }
 
-        private static void CreateTemplates()
+        public void CreateTemplates()
         {
             // Your code here
         }
 
-        private static void CreateElements()
+        public void CreateElements()
         {
             // Your code here
         }

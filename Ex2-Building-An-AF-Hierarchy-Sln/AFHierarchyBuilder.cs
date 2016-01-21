@@ -10,28 +10,24 @@ using External;
 
 namespace Ex2_Building_An_AF_Hierarchy_Sln
 {
-    public static class AFHierarchyBuilder
+    public class AFHierarchyBuilder
     {
-        static AFDatabase _database;
+        private AFDatabase _database;
+        private AFElementTemplate _houseTemplate;
+        private AFElementTemplate _storyTemplate;
+        private AFElementTemplate _roomTemplate;
 
-        static AFElementTemplate _houseTemplate;
-        static AFElementTemplate _storyTemplate;
-        static AFElementTemplate _roomTemplate;
-
-        public static void Build()
+        public AFHierarchyBuilder()
         {
-            CreateDatabase();
-            CreateTemplates();
-            CreateElements();
         }
 
-        private static void CreateDatabase()
+        public void CreateDatabase()
         {
             PISystem piSystem = new PISystems()[Constants.AFSERVERNAME];
             _database = piSystem.Databases.Add("Hogwarts");
         }
 
-        private static void CreateTemplates()
+        public void CreateTemplates()
         {
             // Create the element templates
             _houseTemplate = _database.ElementTemplates.Add("House");
@@ -79,7 +75,7 @@ namespace Ex2_Building_An_AF_Hierarchy_Sln
             _database.CheckIn();
         }
 
-        private static void CreateElements()
+        public void CreateElements()
         {
             AFElement gryffindor = _database.Elements.Add("Gryffindor", _houseTemplate);
             AFElement hufflepuff = _database.Elements.Add("Hufflepuff", _houseTemplate);
@@ -91,7 +87,7 @@ namespace Ex2_Building_An_AF_Hierarchy_Sln
             _database.CheckIn();
         }
 
-        private static void CreateStoriesAndRooms(IEnumerable<AFElement> houses)
+        private void CreateStoriesAndRooms(IEnumerable<AFElement> houses)
         {
             foreach (AFElement house in houses)
             {

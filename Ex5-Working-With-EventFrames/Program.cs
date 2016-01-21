@@ -11,7 +11,12 @@ namespace Ex5_Working_With_EventFrames
     {
         static void Main(string[] args)
         {
-            AFEventFrameCreator.Create();
+            // Uncomment the lines below to test
+            // AFEventFrameCreator efCreator = new AFEventFrameCreator(Constants.AFSERVERNAME, "Wizardry Power Company");
+            // efCreator.CreateEventFrameTemplate();
+            // efCreator.CreateEventFrames();
+            // efCreator.CaptureValues();
+            // efCreator.PrintReport();
 
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();

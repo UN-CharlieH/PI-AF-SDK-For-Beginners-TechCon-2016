@@ -14,7 +14,7 @@ namespace Ex1_Connection_Sln
         static void Main(string[] args)
         {
             AFDatabase db = AFConnection.ImplicitConnect(Constants.AFSERVERNAME, "databaseName");
-            // AFDatabase db = AFConnection.ExplicitConnect("serverName", "databaseName"); 
+            // db = AFConnection.ExplicitConnect("serverName", "databaseName"); 
 
             if (db != null) Console.WriteLine("Connected to database: {0}", db.Name);
             Console.WriteLine("Press any key to exit");
