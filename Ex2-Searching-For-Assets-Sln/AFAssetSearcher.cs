@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OSIsoft.AF;
 using OSIsoft.AF.Asset;
 using OSIsoft.AF.Search;
@@ -15,8 +11,8 @@ namespace Ex3_Searching_For_Assets_Sln
 
         public AFAssetSearcher(string server, string database)
         {
-            PISystem ps  = new PISystems()[server];
-            if (ps != null) _database = ps.Databases[database];
+            PISystem piSystem = new PISystems()[server];
+            if (piSystem != null) _database = piSystem.Databases[database];
         }
 
         public void FindMetersByName(string elementNameFilter)
@@ -33,14 +29,10 @@ namespace Ex3_Searching_For_Assets_Sln
 
             foreach (AFElement element in foundElements)
             {
-
-                string categories = "[" + String.Join(",", element.Categories.Select(c => c.Name)) + "]";
-
-                Console.WriteLine("{0}, {1}, {2}, {3}", 
-                    element.Name, 
-                    element.Template, 
-                    categories,
-                    element.Attributes.Count);
+                Console.WriteLine("Element: {0}, Template: {1}, Categories: {2}",
+                    element.Name,
+                    element.Template.Name,
+                    element.CategoriesString);
             }
         }
 
@@ -52,19 +44,15 @@ namespace Ex3_Searching_For_Assets_Sln
                                                                 database: _database,
                                                                 searchRoot: null,
                                                                 template: elemTemplate,
-                                                                includeDerived: false,
+                                                                includeDerived: true,
                                                                 sortField: AFSortField.Name,
                                                                 sortOrder: AFSortOrder.Ascending,
                                                                 maxCount: 100);
 
-            StringBuilder sb = new StringBuilder();
             foreach (AFElement element in foundElements)
             {
-                sb.Append(element.Name).Append(", ");
+                Console.WriteLine("Element: {0}, Template: {1}", element.Name, element.Template.Name);
             }
-            sb.Length--;
-            sb.Length--;
-            Console.WriteLine(sb.ToString());
         }
 
         public void FindMetersBySubstation(string substationLocation)
@@ -85,23 +73,22 @@ namespace Ex3_Searching_For_Assets_Sln
                                                     sortOrder: AFSortOrder.Ascending,
                                                     maxCount: 100);
 
-            StringBuilder sb = new StringBuilder();
+            string[] meterNames = new string[foundElements.Count];
+            int i = 0;
             foreach (AFElement element in foundElements)
             {
-                sb.Append(element.Name).Append(", ");
+                meterNames[i++] = element.Name;
             }
-            sb.Length--;
-            sb.Length--;
-            Console.WriteLine(sb.ToString());
+            Console.WriteLine(string.Join(", ", meterNames));
         }
 
-        public void FindMetersByUsage(AFSearchOperator op, double val)
+        public void FindMetersAboveUsage(double val)
         {
             AFElementTemplate elemTemplate = _database.ElementTemplates["MeterBasic"];
             AFAttributeTemplate attrTemplate = elemTemplate.AttributeTemplates["Energy Usage"];
 
             AFAttributeValueQuery[] query = new AFAttributeValueQuery[1];
-            query[0] = new AFAttributeValueQuery(attrTemplate, op, val);
+            query[0] = new AFAttributeValueQuery(attrTemplate, AFSearchOperator.GreaterThan, val);
 
             AFNamedCollectionList<AFElement> foundElements = AFElement.FindElementsByAttribute(
                                                     searchRoot: null,
@@ -112,14 +99,13 @@ namespace Ex3_Searching_For_Assets_Sln
                                                     sortOrder: AFSortOrder.Ascending,
                                                     maxCount: 100);
 
-            StringBuilder sb = new StringBuilder();
+            string[] meterNames = new string[foundElements.Count];
+            int i = 0;
             foreach (AFElement element in foundElements)
             {
-                sb.Append(element.Name).Append(", ");
+                meterNames[i++] = element.Name;
             }
-            sb.Length--;
-            sb.Length--;
-            Console.WriteLine(sb.ToString());
+            Console.WriteLine(string.Join(", ", meterNames));
         }
 
         public void FindBuildingInfo(string templateName)
@@ -144,9 +130,7 @@ namespace Ex3_Searching_For_Assets_Sln
                                                     sortOrder: AFSortOrder.Ascending,
                                                     maxCount: 100);
 
-            IEnumerable<string> elementNames = foundAttributes.Select(a => a.Element.Name).Distinct();
-
-            Console.WriteLine(String.Join(", ", elementNames));
+            Console.WriteLine("Found {0} attributes:", foundAttributes.Count);
         }
     }
 }

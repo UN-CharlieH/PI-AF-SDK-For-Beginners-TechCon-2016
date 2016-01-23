@@ -11,9 +11,10 @@ namespace Ex5_Working_With_EventFrames
 {
     public class AFEventFrameCreator
     {
-        // Define any members here
         private AFDatabase _database;
         private AFElementTemplate _efTemp; // For AF Event Frame template
+
+        // Define other instance members here
 
         public AFEventFrameCreator(string server, string database)
         {

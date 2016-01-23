@@ -7,37 +7,27 @@ using OSIsoft.AF;
 using OSIsoft.AF.Asset;
 using OSIsoft.AF.EventFrame;
 using OSIsoft.AF.Time;
+using External;
 
 namespace Ex5_Working_With_Event_Frames
 {
     public class AFEventFrameCreator
     {
-        // Define any members here
         private AFDatabase _database;
-        private AFElementTemplate _efTemp; // References to the AF Event Frame template
+        private AFElementTemplate _eventFrameTemplate;
 
         public AFEventFrameCreator(string server, string database)
         {
-            PISystem ps = new PISystems()[server];
-            _database = ps.Databases[database];
-
-            if (_database != null &&  _database.ElementTemplates.Contains("Usage Tracker"))
-            {
-                _efTemp = _database.ElementTemplates["Usage Tracker"];
-            }
+            PISystem piSystem = new PISystems()[server];
+            if (piSystem != null) _database = piSystem.Databases[database];
         }
 
         public void CreateEventFrameTemplate()
         {
-            if (_database.ElementTemplates.Contains("Usage Tracker"))
-            {
-                return;
-            }
-
-            _efTemp = _database.ElementTemplates.Add("Usage Tracker");
-            _efTemp.InstanceType = typeof(AFEventFrame);
-            _efTemp.NamingPattern = @"%TEMPLATE%-%ELEMENT%-%STARTTIME:yyyy-MM-dd%*";
-            AFAttributeTemplate usage = _efTemp.AttributeTemplates.Add("Average Energy Usage");
+            _eventFrameTemplate = _database.ElementTemplates.Add("Daily Usage");
+            _eventFrameTemplate.InstanceType = typeof(AFEventFrame);
+            _eventFrameTemplate.NamingPattern = @"%TEMPLATE%-%ELEMENT%-%STARTTIME:yyyy-MM-dd%*";
+            AFAttributeTemplate usage = _eventFrameTemplate.AttributeTemplates.Add("Average Energy Usage");
 
             usage.Type = typeof(double);
             usage.DataReferencePlugIn = AFDataReference.GetPIPointDataReference();
@@ -72,7 +62,7 @@ namespace Ex5_Working_With_Event_Frames
                         DateTime start = new DateTime(2015, 12, day, 0, 0, 0, DateTimeKind.Local);
                         AFTime startTime = new AFTime(start);
                         AFTime endTime = new AFTime(start.AddDays(1));
-                        AFEventFrame ef = new AFEventFrame(_database, "*", _efTemp);
+                        AFEventFrame ef = new AFEventFrame(_database, "*", _eventFrameTemplate);
                         ef.SetStartTime(startTime);
                         ef.SetEndTime(endTime);
                         ef.PrimaryReferencedElement = meter;
@@ -104,7 +94,7 @@ namespace Ex5_Working_With_Event_Frames
                     nameFilter: "*",
                     referencedElementNameFilter: "*",
                     eventFrameCategory: null,
-                    eventFrameTemplate: _efTemp,
+                    eventFrameTemplate: _eventFrameTemplate,
                     referencedElementTemplate: null,
                     searchFullHierarchy: true
                     );
@@ -143,7 +133,7 @@ namespace Ex5_Working_With_Event_Frames
                     nameFilter: "*",
                     referencedElementNameFilter: "Meter003",
                     eventFrameCategory: null,
-                    eventFrameTemplate: _efTemp,
+                    eventFrameTemplate: _eventFrameTemplate,
                     referencedElementTemplate: null,
                     durationQuery: null,
                     searchFullHierarchy: true,

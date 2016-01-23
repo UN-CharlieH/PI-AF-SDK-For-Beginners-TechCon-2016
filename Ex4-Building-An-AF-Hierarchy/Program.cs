@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using External;
 
 namespace Ex2_Building_AF_Database
 {
@@ -11,10 +8,15 @@ namespace Ex2_Building_AF_Database
         static void Main(string[] args)
         {
             // Uncomment the lines below to test
-            // AFHierarchyBuilder builder = new AFHierarchyBuilder();
+            // AFHierarchyBuilder builder = new AFHierarchyBuilder(Constants.AFSERVERNAME);
             // builder.CreateDatabase();
+            // builder.CreateCategories();
+            // builder.CreateEnumerationSets();
             // builder.CreateTemplates();
             // builder.CreateElements();
+            // builder.SetAttributeValues();
+            // builder.CreateDistrictElements();
+            // builder.CreateWeakReferences();
 
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();

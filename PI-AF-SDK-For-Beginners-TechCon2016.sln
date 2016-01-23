@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection", "Ex1_Connection\Ex1-Connection.csproj", "{B8A590E4-2FC6-40ED-9AEF-07652B8EEC8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection-And-Hierarchy-Basics", "Ex1-Connection-And-Hierarchy-Basics\Ex1-Connection-And-Hierarchy-Basics.csproj", "{B8A590E4-2FC6-40ED-9AEF-07652B8EEC8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection-Sln", "Ex1_Connection_Sln\Ex1-Connection-Sln.csproj", "{ABB540D9-4B9F-4A83-9578-5E33EE7C5CF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection-And-Hierarchy-Basics-Sln", "Ex1-Connection-And-Hierarchy-Basics-Sln\Ex1-Connection-And-Hierarchy-Basics-Sln.csproj", "{ABB540D9-4B9F-4A83-9578-5E33EE7C5CF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex2-Building-An-AF-Hierarchy", "Ex2-Building-AF-Database\Ex2-Building-An-AF-Hierarchy.csproj", "{E649E492-A683-4EFE-864E-F5176C934F55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex2-Searching-For-Assets", "Ex2-Searching-For-Assets\Ex2-Searching-For-Assets.csproj", "{2DFDAF54-68AC-4361-B173-CE5899B455D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex2-Building-An-AF-Hierarchy-Sln", "Ex2-Building-An-AF-Hierarchy-Sln\Ex2-Building-An-AF-Hierarchy-Sln.csproj", "{7A8A9C6A-1626-431D-A06A-B242C8FAAD01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex2-Searching-For-Assets-Sln", "Ex2-Searching-For-Assets-Sln\Ex2-Searching-For-Assets-Sln.csproj", "{A26EEA96-303C-4EF3-B109-09F66462791F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex3-Searching-For-Assets", "Ex3-Searching-For-Assets\Ex3-Searching-For-Assets.csproj", "{2DFDAF54-68AC-4361-B173-CE5899B455D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex4-Building-An-AF-Hierarchy", "Ex4-Building-An-AF-Hierarchy\Ex4-Building-An-AF-Hierarchy.csproj", "{E649E492-A683-4EFE-864E-F5176C934F55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex3-Searching-For-Assets-Sln", "Ex3-Searching-For-Assets-Sln\Ex3-Searching-For-Assets-Sln.csproj", "{A26EEA96-303C-4EF3-B109-09F66462791F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex5-Working-With-Event-Frames-Sln", "Ex5-Working-With-Event-Frames\Ex5-Working-With-Event-Frames-Sln.csproj", "{FF41DBFC-2BF3-4786-9A9A-6F13B4328CEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex4-Building-An-AF-Hierarchy-Sln", "Ex4-Building-An-AF-Hierarchy-Sln\Ex4-Building-An-AF-Hierarchy-Sln.csproj", "{7A8A9C6A-1626-431D-A06A-B242C8FAAD01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex5-Working-With-Event-Frames", "Ex5-Working-With-EventFrames\Ex5-Working-With-Event-Frames.csproj", "{336C7E54-66C9-45C0-8BB8-FA9B3A3CB0FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex5-Working-With-Event-Frames-Sln", "Ex5-Working-With-Event-Frames\Ex5-Working-With-Event-Frames-Sln.csproj", "{FF41DBFC-2BF3-4786-9A9A-6F13B4328CEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "External", "External\External.csproj", "{D092B122-47DE-4107-B2A3-CC06F8426C62}"
 EndProject

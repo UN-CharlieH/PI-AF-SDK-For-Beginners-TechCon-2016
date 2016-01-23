@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OSIsoft.AF;
+using OSIsoft.AF.Asset;
 using OSIsoft.AF.Search;
 
-namespace Ex3_Searching_For_Assets
+namespace Ex2_Searching_For_Assets
 {
     public class AFAssetSearcher
     {
         AFDatabase _database;
+
         // Define other instance members here
 
         public AFAssetSearcher(string server, string database)
         {
-            // Your code here
+            PISystem piSystem = new PISystems()[server];
+            if (piSystem != null) _database = piSystem.Databases[database];
         }
 
         public void FindMetersByName(string elementNameFilter)
@@ -33,7 +32,7 @@ namespace Ex3_Searching_For_Assets
             // Your code here
         }
 
-        public void FindMetersByUsage(AFSearchOperator op, double val)
+        public void FindMetersAboveLimit(double val)
         {
             // Your code here
         }

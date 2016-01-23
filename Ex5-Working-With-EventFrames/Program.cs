@@ -12,7 +12,7 @@ namespace Ex5_Working_With_EventFrames
         static void Main(string[] args)
         {
             // Uncomment the lines below to test
-            // AFEventFrameCreator efCreator = new AFEventFrameCreator(Constants.AFSERVERNAME, "Wizardry Power Company");
+            // AFEventFrameCreator efCreator = new AFEventFrameCreator(Constants.AFSERVERNAME, "Magical Power Company");
             // efCreator.CreateEventFrameTemplate();
             // efCreator.CreateEventFrames();
             // efCreator.CaptureValues();
