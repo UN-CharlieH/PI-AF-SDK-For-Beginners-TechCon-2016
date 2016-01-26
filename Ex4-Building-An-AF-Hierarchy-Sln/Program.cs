@@ -12,7 +12,6 @@ namespace Ex4_Building_An_AF_Hierarchy_Sln
             builder.CreateCategories();
             builder.CreateEnumerationSets();
             builder.CreateTemplates();
-            builder.CreateDataArchiveElement();
             builder.CreateElements();
             builder.SetAttributeValues();
             builder.CreateDistrictElements();
