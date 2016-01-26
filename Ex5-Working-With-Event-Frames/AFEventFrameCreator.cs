@@ -27,8 +27,8 @@ namespace Ex5_Working_With_Event_Frames
             _eventFrameTemplate = _database.ElementTemplates.Add("Daily Usage");
             _eventFrameTemplate.InstanceType = typeof(AFEventFrame);
             _eventFrameTemplate.NamingPattern = @"%TEMPLATE%-%ELEMENT%-%STARTTIME:yyyy-MM-dd%*";
-            AFAttributeTemplate usage = _eventFrameTemplate.AttributeTemplates.Add("Average Energy Usage");
 
+            AFAttributeTemplate usage = _eventFrameTemplate.AttributeTemplates.Add("Average Energy Usage");
             usage.Type = typeof(double);
             usage.DataReferencePlugIn = AFDataReference.GetPIPointDataReference();
             usage.ConfigString = @".\Elements[.]|Energy Usage;TimeRangeMethod=Average";
@@ -39,7 +39,7 @@ namespace Ex5_Working_With_Event_Frames
 
         public void CreateEventFrames()
         {
-            const int pageSize = 200;
+            const int pageSize = 1000;
             int startIndex = 0;
             int totalCount;
             do
@@ -77,7 +77,7 @@ namespace Ex5_Working_With_Event_Frames
 
         public void CaptureValues()
         {
-            const int pageSize = 200;
+            const int pageSize = 1000;
             int startIndex = 0;
 
             AFTime startTime = new AFTime(new DateTime(2015, 12, 1, 0, 0, 0, DateTimeKind.Local));
@@ -113,7 +113,7 @@ namespace Ex5_Working_With_Event_Frames
 
         public void PrintReport()
         {
-            const int pageSize = 200;
+            const int pageSize = 1000;
             int startIndex = 0;
 
             AFTime startTime = new AFTime(new DateTime(2015, 12, 29, 0, 0, 0, DateTimeKind.Local));

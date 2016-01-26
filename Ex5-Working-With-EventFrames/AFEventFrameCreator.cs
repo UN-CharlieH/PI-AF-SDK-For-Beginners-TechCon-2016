@@ -18,7 +18,8 @@ namespace Ex5_Working_With_EventFrames
 
         public AFEventFrameCreator(string server, string database)
         {
-            // Your code here
+            PISystem piSystem = new PISystems()[server];
+            if (piSystem != null) _database = piSystem.Databases[database];
         }
 
         public void CreateEventFrameTemplate()
