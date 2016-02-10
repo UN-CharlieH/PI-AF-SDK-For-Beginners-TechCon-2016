@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex1-Connection-And-Hierarchy-Basics", "Ex1-Connection-And-Hierarchy-Basics\Ex1-Connection-And-Hierarchy-Basics.csproj", "{B8A590E4-2FC6-40ED-9AEF-07652B8EEC8F}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex3-Reading-And-Writing-Data", "Ex3-Reading-And-Writing-Data\Ex3-Reading-And-Writing-Data.csproj", "{EBA8F603-D688-4689-AA57-41736EBD894F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex3-Reading-And-Writing-Data-Sln", "Ex3-Reading-And-Writing-Data-Sln\Ex3-Reading-And-Writing-Data-Sln.csproj", "{ECB4566E-725E-4DAF-8543-29FCAF38FF1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex8-Asynchronous-Read-Write", "Ex8-Asynchronous-Read-Write\Ex8-Asynchronous-Read-Write.csproj", "{A2BF3E92-9000-448C-B382-06A558C94C16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{ECB4566E-725E-4DAF-8543-29FCAF38FF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECB4566E-725E-4DAF-8543-29FCAF38FF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECB4566E-725E-4DAF-8543-29FCAF38FF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BF3E92-9000-448C-B382-06A558C94C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BF3E92-9000-448C-B382-06A558C94C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BF3E92-9000-448C-B382-06A558C94C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BF3E92-9000-448C-B382-06A558C94C16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
